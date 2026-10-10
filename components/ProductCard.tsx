@@ -3,12 +3,13 @@ import { bn, bnPct, perUnit } from "@/lib/bn";
 import type { Product } from "@/lib/types";
 
 export function ChangeBadge({ dir, pct, large = false }: { dir: Product["change"]["dir"]; pct: number; large?: boolean }) {
+  // Matches the Figma: price up = red, price down = green, flat = neutral.
   const style =
     dir === "up"
-      ? "bg-success/12 text-success"
+      ? "bg-base-200 text-danger"
       : dir === "down"
-        ? "bg-danger/12 text-danger"
-        : "bg-base-200 text-ink/60";
+        ? "bg-base-200 text-success"
+        : "bg-base-200 text-ink";
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "—";
   return (
     <span

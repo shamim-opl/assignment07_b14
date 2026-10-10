@@ -56,7 +56,7 @@ export default function HomeProducts() {
       <Movers
         id="risers"
         icon="▲"
-        tone="text-success"
+        tone="text-danger"
         title="আজ দাম বেড়েছে"
         items={risers}
         loading={loading}
@@ -64,7 +64,7 @@ export default function HomeProducts() {
       <Movers
         id="fallers"
         icon="▼"
-        tone="text-danger"
+        tone="text-success"
         title="আজ দাম কমেছে"
         items={fallers}
         loading={loading}

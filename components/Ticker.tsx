@@ -6,7 +6,7 @@ import type { Product } from "@/lib/types";
 
 function Item({ p }: { p: Product }) {
   const { dir, pct } = p.change;
-  const color = dir === "up" ? "text-success" : dir === "down" ? "text-danger" : "text-ink/50";
+  const color = dir === "up" ? "text-danger" : dir === "down" ? "text-success" : "text-ink";
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "—";
   return (
     <li className="flex shrink-0 items-center gap-2 px-4 text-sm">
