@@ -10,3 +10,5 @@ next-env.d.ts
 CLAUDE.md
 *.fig
 *.penpot
+/bazar-hero.png
+/logo-icon.png

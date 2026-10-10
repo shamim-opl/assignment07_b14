@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { fetchProduct, NotFoundError } from "@/lib/api";
+import { useMemo } from "react";
+import { useProducts } from "@/lib/hooks";
 import { bn, perUnit, taka, unitName } from "@/lib/bn";
 import type { Product } from "@/lib/types";
 import EmptyState from "./EmptyState";
@@ -42,23 +42,13 @@ function Loading() {
 }
 
 export default function ProductDetails({ slug }: { slug: string }) {
-  const [product, setProduct] = useState<Product | null>(null);
-  const [status, setStatus] = useState<"loading" | "ok" | "missing" | "error">("loading");
-
-  useEffect(() => {
-    let alive = true;
-    setStatus("loading");
-    fetchProduct(slug)
-      .then((p) => {
-        if (!alive) return;
-        setProduct(p);
-        setStatus("ok");
-      })
-      .catch((e) => alive && setStatus(e instanceof NotFoundError ? "missing" : "error"));
-    return () => {
-      alive = false;
-    };
-  }, [slug]);
+  // The API looks products up by numeric id, so the slug is resolved from the shared product list.
+  const { data, loading, error } = useProducts();
+  const product = useMemo(
+    () => data?.find((p) => p.slug === slug || String(p.id) === slug) ?? null,
+    [data, slug],
+  );
+  const status = loading ? "loading" : error ? "error" : product ? "ok" : "missing";
 
   const stats = useMemo(() => {
     if (!product) return null;

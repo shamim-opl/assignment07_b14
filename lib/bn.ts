@@ -28,6 +28,5 @@ export function bnDate(d = new Date()) {
     month: "long",
     year: "numeric",
   })
-    .format(d)
-    .replace(/(\S)\s(\S+)\s(\S+)$/, "$1 $2, $3");
+    .format(d);
 }
