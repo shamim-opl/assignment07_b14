@@ -8,7 +8,7 @@ BazarDor shows today's prices for everyday groceries, how much they moved since 
 
 | | |
 |---|---|
-| **Live site** | _add your deployed link here_ |
+| **Live site** | https://bazar-dor-inky-nu.vercel.app |
 | **Repository** | https://github.com/shamim-opl/assignment07_b14 |
 
 ---
