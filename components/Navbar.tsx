@@ -101,16 +101,16 @@ export default function Navbar() {
       </div>
 
       <div className="border-t border-base-300">
-        <ul className="container-x flex gap-1 overflow-x-auto py-2 [scrollbar-width:none]">
+        <ul className="container-x grid grid-cols-4 gap-1 py-2 sm:flex sm:overflow-x-auto sm:[scrollbar-width:none]">
           {categories
             ? categories.map((c) => {
                 const active = pathname === `/category/${c.slug}`;
                 return (
-                  <li key={c.id} className="shrink-0">
+                  <li key={c.id} className="min-w-0 sm:shrink-0">
                     <Link
                       href={`/category/${c.slug}`}
                       aria-current={active ? "page" : undefined}
-                      className={`flex h-8 items-center gap-1.5 rounded-lg px-3 text-sm transition-colors ${
+                      className={`flex h-8 items-center justify-center gap-1 whitespace-nowrap rounded-lg px-1 text-[13px] transition-colors sm:justify-start sm:gap-1.5 sm:px-3 sm:text-sm ${
                         active ? "bg-primary font-medium text-primary-content" : "hover:bg-base-200"
                       }`}
                     >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 );
               })
             : Array.from({ length: 8 }).map((_, i) => (
-                <li key={i} className="skeleton h-8 w-20 shrink-0 !rounded-lg" />
+                <li key={i} className="skeleton h-8 sm:w-20 sm:shrink-0 !rounded-lg" />
               ))}
         </ul>
       </div>

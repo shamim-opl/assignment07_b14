@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="bn" className={hind.variable}>
       <body className="flex min-h-screen flex-col">
-        <header className="sticky top-0 z-40 border-b border-base-300 bg-base-100/95 backdrop-blur">
+        <header className="z-40 md:sticky md:top-0 border-b border-base-300 bg-base-100/95 backdrop-blur">
           <Navbar />
         </header>
         <Ticker />
