@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env
+.env.local
+*.sqlite
+*.tsbuildinfo
+next-env.d.ts
+.claude
+CLAUDE.md
+*.fig
+*.penpot
