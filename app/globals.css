@@ -40,10 +40,10 @@
     @apply rounded-2xl border border-base-300 bg-base-100;
   }
   .btn {
-    @apply inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-lg border px-4 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex h-10 cursor-pointer items-center whitespace-nowrap justify-center gap-2 rounded-lg border px-4 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
   }
   .btn-sm {
-    @apply h-9 px-3;
+    @apply h-9 gap-1 px-2.5 text-[13px] sm:text-sm;
   }
   .btn-primary {
     @apply border-primary-strong bg-primary text-primary-content hover:bg-primary-hover;

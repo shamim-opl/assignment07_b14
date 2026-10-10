@@ -40,20 +40,20 @@ export default function Navbar() {
 
   return (
     <nav aria-label="মূল নেভিগেশন">
-      <div className="container-x flex h-[68px] items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-base-200 text-xl">
+      <div className="container-x flex h-[68px] items-center justify-between gap-2 sm:gap-3">
+        <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-base-200 text-lg sm:h-10 sm:w-10 sm:text-xl">
             🛒
           </span>
-          <span className="flex flex-col leading-tight">
+          <span className="flex min-w-0 flex-col leading-tight">
             <span className="text-xl font-bold">বাজার দর</span>
-            <span className="min-h-4 text-xs text-ink/60" suppressHydrationWarning>
+            <span className="min-h-4 truncate text-[11px] text-ink/60 sm:text-xs" suppressHydrationWarning>
               {date}
             </span>
           </span>
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           {isPending ? (
             <div className="skeleton h-10 w-28 !rounded-lg" />
           ) : user ? (
